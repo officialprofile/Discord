@@ -1,18 +1,16 @@
 ### Part 1 - Registration
 
-1. Go to [Discord Developer Portal](https://discord.com/developers/applications) and create account for your bot.
+1. Go to [Discord Developer Portal](https://discord.com/developers/applications) 
 
-2. Verify your account (if you just registered) and then go to the Developer Portal. 
+2. Click `New Application`, go to `Bot` -> Add Bot (Keep default settings) -> Copy Token. This token is basically a password, so don't share it with anybody. If you leak it then generate another one. 
 
-3. Click `New Application`, go to `Bot` -> Add Bot (Keep default settings) -> Copy Token. This token is basically a password, so don't share it with anybody. If you leak your token then generate another one. 
+3. Go to `OAuth2` -> Add `bot` in scopes -> Add bot permissions (it depends on you bot's purposes, e.g. `send messages`, `read message history`, `mention everyone`, `add reactions`, `view channels`).
 
-4. Go to `OAuth2` -> Add `bot` in scopes -> Add bot permissions (it depends on you bot's purposes, e.g. `send messages`, `read message history`, `mention everyone`, `add reactions`, `view channels`) -> After setting the permissions copy the link from the scopes field. This is an invitation link that allows you to connect the bot to your servers. 
+4. Copy the link from the scopes field. This is the invitation link that allows you to connect the bot to the servers. After using the link (paste it in your web browser) your bot should join one of your servers, but it will be offline.
 
-5. After using the link your bot should join one of your servers but it will be offline.
+### Part 2 - Code
 
-### Part 2 - Coding
-
-6. Go to replit.com and creat new python repl. Name of the repl is not important.
+6. Go to [replit.com](https://replit.com) and create new python repl. Name of the repl is not important.
 
 7. Paste the following code to the `main.py` file
 
@@ -44,7 +42,7 @@ client.run(os.getenv('BOT_TOKEN'))
 
 At this point your bot should be online and should reply to the hello message.
 
-### Part 3 - create web server
+### Part 3 - Web server
 
 We need to make our bot to run the web server in order to keep the bot online (in case of no requests). You can read more [here](https://docs.replit.com/hosting/deploying-http-servers) about it.
 
@@ -80,10 +78,10 @@ keep_alive()
 client.run(os.getenv('BOT_TOKEN'))
 ```
 
-11. Run the code. A website with text Online should appear. Cody the link of the webpage.
+11. Run the code. A website with white background and text Online should appear. Copy the link of the webpage.
 
-11. Register to [uptimerobot.com](https://uptimerobot.com) and login
+12. Register to [uptimerobot.com](https://uptimerobot.com) and login
 
-13. Click `Add New Monitor`. Monitor type: https. Name is not important. URL: paste the link. Set monitoring interval to 5 minutes. Create monitor.
+13. Click `Add New Monitor`. Monitor type: https. Name is not important. URL: paste the link. Set monitoring interval to 5 minutes. Click `Create monitor`.
 
-At this point your bot should continue to run, even when there is no activity on your server for a long peroid of time.
+At this point your bot should continue to run, even when there is no activity on your server for a longer peroid of time.
