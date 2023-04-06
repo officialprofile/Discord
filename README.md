@@ -1,18 +1,18 @@
 ### Part 1 - Registration
 
-1. Go to [Discord Developer Portal](https://discord.com/developers/applications) 
+1. Login to [Discord Developer Portal](https://discord.com/developers/applications) or register if you somehow don't have an account.
 
-2. Click `New Application`, go to `Bot` -> Add Bot (Keep default settings) -> Copy Token. This token is basically a password, so don't share it with anybody. If you leak it then generate another one. 
+2. Click `New Application`, go to `Bot` -> Add Bot (keep default settings) -> click `Copy` to copy your token. This token is basically a password, so don't share it with anyone. If you leak it then generate another one. 
 
 3. Go to `OAuth2` -> Add `bot` in scopes -> Add bot permissions (it depends on you bot's purposes, e.g. `send messages`, `read message history`, `mention everyone`, `add reactions`, `view channels`).
 
-4. Copy the link from the scopes field. This is the invitation link that allows you to connect the bot to the servers. After using the link (paste it in your web browser) your bot should join one of your servers, but it will be offline.
+4. Copy the link from the `scopes` field. This is the invitation link that allows you to connect the bot to your servers. After using the link (paste it into a web browser) your bot should join one of your servers, but it will be offline.
 
 ### Part 2 - Code
 
-6. Go to [replit.com](https://replit.com) and create new python repl. Name of the repl is not important.
+6. Go to [replit.com](https://replit.com) and create new python repl. Name of the repl is not important. If you want to work on your own server then simply create `main.py` file that you will have to run. 
 
-7. Paste the following code to the `main.py` file
+7. Paste the following code into the `main.py`:
 
 ```python
 import discord
@@ -33,20 +33,18 @@ async def on_message(message):
     await mesage.channel.send('sup')
     
 # When using replit (which is public) one must hide the token by creating so called secret
-# repl (left panel) -> tools -> secret -> paste the token and name varaible e.g. BOT_TOKEN
+# repl (left panel) -> tools -> secrets -> paste the token and name the variable e.g. BOT_TOKEN
 client.run(os.getenv('BOT_TOKEN'))
 
 ```
 
-8. Run the script
-
-At this point your bot should be online and should reply to the hello message.
+8. Run the script. At this point your bot should be online and should reply to the hello message.
 
 ### Part 3 - Web server
 
-We need to make our bot to run the web server in order to keep the bot online (in case of no requests). You can read more [here](https://docs.replit.com/hosting/deploying-http-servers) about it.
+We need to make our bot to run the web server in order to keep the bot alive (in case of no requests). You can read more  about this issue [here](https://docs.replit.com/hosting/deploying-http-servers).
 
-9. Create file, e.g. `online.py` in your replt and paste this code
+9. Create file, e.g. `online.py` in your repl and paste this code:
 
 ```python
 from flask import Flask
@@ -66,22 +64,16 @@ def keep_alive():
   t.start()
 ```
 
-10. Update `main.py`
-
-Add 
+10. Update `main.py` by adding  
 ```python
 from online import keep_alive
-```
-and at the bottom
-```python
+...
 keep_alive()
 client.run(os.getenv('BOT_TOKEN'))
 ```
 
-11. Run the code. A website with white background and text Online should appear. Copy the link of the webpage.
+11. Run the code. A website with white background and text Online should appear. Copy the url of the webpage.
 
-12. Register to [uptimerobot.com](https://uptimerobot.com) and login
+12. Login to [uptimerobot.com](https://uptimerobot.com) (register if needed) and click `Add New Monitor`. Set monitor type to https. Name is not important. Paste your url into the URL field. Set monitoring interval to 5 minutes. Click `Create monitor`.
 
-13. Click `Add New Monitor`. Monitor type: https. Name is not important. URL: paste the link. Set monitoring interval to 5 minutes. Click `Create monitor`.
-
-At this point your bot should continue to run, even when there is no activity on your server for a longer peroid of time.
+Your bot is ready and should continue to run, even when there is no activity on your server for a longer peroid of time.
