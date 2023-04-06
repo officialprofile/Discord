@@ -2,15 +2,15 @@
 
 1. Login to [Discord Developer Portal](https://discord.com/developers/applications) or register if you somehow don't have an account.
 
-2. Click `New Application`, go to `Bot` -> Add Bot (keep default settings) -> click `Copy` to copy your token. This token is basically a password, so don't share it with anyone. If you leak it then generate another one. 
+2. Click `New Application`, go to `Bot` -> add bot field (keep default settings) -> click `Copy` to copy your token. This token is basically a password, so don't share it with anyone. If you leak it then generate another one. 
 
-3. Go to `OAuth2` -> Add `bot` in scopes -> Add bot permissions (it depends on you bot's purposes, but `send messages`, `read message history`, `mention everyone`, `add reactions`, and `view channels` are basically a must have).
+3. Go to `OAuth2` -> add `bot` in scopes -> add bot permissions (of course they depend on you bot's purposes, but `send messages`, `read message history`, `mention everyone`, `add reactions`, and `view channels` are basically a must have).
 
-4. Copy the link from the `scopes` field. This is the invitation link that allows you to join the bot to your servers. After using the link (paste it into a web browser) your bot should join a selected server, but it will be offline.
+4. Copy the url from the `scopes` field. This is the invitation that allows you to join the bot to your servers. After using the link (paste it into a web browser) your bot should join a selected server, but it will be offline.
 
 ### Part 2 - Code
 
-6. Go to [replit.com](https://replit.com) and create new python repl. Name of the repl is not important. If you want to work on your own server then simply create `main.py` file that you will have to run. 
+6. Go to [replit.com](https://replit.com) and create new python repl. Name of the repl is not important. If you want to use your own server then simply create `main.py` file that you will have to run. 
 
 7. Paste the following code into the `main.py`:
 
@@ -42,7 +42,7 @@ client.run(os.getenv('BOT_TOKEN'))
 
 ### Part 3 - Web server
 
-We need to make our bot to run the web server in order to keep the bot alive (in case of no requests). You can read more  about this issue [here](https://docs.replit.com/hosting/deploying-http-servers).
+We need to make our bot run a web server in order to keep the bot alive (in case of no requests that will put the bot to sleep). You can read more about this issue [here](https://docs.replit.com/hosting/deploying-http-servers).
 
 9. Create file, e.g. `online.py` in your repl and paste this code:
 
