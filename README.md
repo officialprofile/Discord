@@ -4,9 +4,9 @@
 
 2. Click `New Application`, go to `Bot` -> Add Bot (keep default settings) -> click `Copy` to copy your token. This token is basically a password, so don't share it with anyone. If you leak it then generate another one. 
 
-3. Go to `OAuth2` -> Add `bot` in scopes -> Add bot permissions (it depends on you bot's purposes, e.g. `send messages`, `read message history`, `mention everyone`, `add reactions`, `view channels`).
+3. Go to `OAuth2` -> Add `bot` in scopes -> Add bot permissions (it depends on you bot's purposes, but `send messages`, `read message history`, `mention everyone`, `add reactions`, and `view channels` are basically a must have).
 
-4. Copy the link from the `scopes` field. This is the invitation link that allows you to connect the bot to your servers. After using the link (paste it into a web browser) your bot should join one of your servers, but it will be offline.
+4. Copy the link from the `scopes` field. This is the invitation link that allows you to join the bot to your servers. After using the link (paste it into a web browser) your bot should join a selected server, but it will be offline.
 
 ### Part 2 - Code
 
