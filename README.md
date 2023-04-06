@@ -1,10 +1,10 @@
 ### Part 1 - Registration
 
-1. Go to [Discord Developer Portal](https://discord.com/developers/applications) and create account for your bot. This is parallel to your personal Discord account, so trying to login in a usual way won't work. 
+1. Go to [Discord Developer Portal](https://discord.com/developers/applications) and create account for your bot.
 
-2. Verify your account and go to the Developer Portal. 
+2. Verify your account (if you just registered) and then go to the Developer Portal. 
 
-3. Go to `Bot` -> Add Bot (Keep default settings) -> Copy Token. This token is basically a password, so don't share it with anybody. If you leak your token then generate another one. 
+3. Click `New Application`, go to `Bot` -> Add Bot (Keep default settings) -> Copy Token. This token is basically a password, so don't share it with anybody. If you leak your token then generate another one. 
 
 4. Go to `OAuth2` -> Add `bot` in scopes -> Add bot permissions (it depends on you bot's purposes, e.g. `send messages`, `read message history`, `mention everyone`, `add reactions`, `view channels`) -> After setting the permissions copy the link from the scopes field. This is an invitation link that allows you to connect the bot to your servers. 
 
