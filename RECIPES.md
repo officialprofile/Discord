@@ -34,3 +34,37 @@ client = discord.Client()
 client.var1 = 21 # This can be changed
 var2 = 37        # This cannot
 ```
+
+### Change presence
+
+#### Watching
+```python
+@client.event
+async def on_ready():
+    await client.change_presence(activity=discord.Activity(
+        type=discord.ActivityType.watching, name='movie'))
+```
+#### Listening
+```python
+@client.event
+async def on_ready():
+    await client.change_presence(activity=discord.Activity(
+        type=discord.ActivityType.listening, name='song'))
+```
+#### Game
+```python
+@client.event
+async def on_ready():
+    await client.change_presence(activity=discord.Game(name="game"))
+```
+#### Stream
+```python
+@client.event
+async def on_ready():
+    await client.change_presence(activity=discord.Streaming(name="stream", url='https://www.youtube.com/watch?v=VmKin2xhKNk'))
+```
+Of course, the activity can be changed on the fly by adding the code after
+```python
+@client.event
+async def on_message(message):
+```
