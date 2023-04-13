@@ -30,7 +30,7 @@ async def on_message(message):
     return
     
   if messsage.content.startswith('hello'):
-    await mesage.channel.send('sup')
+    await message.channel.send('sup')
     
 # When using replit (which is public) one must hide the token by creating so called secret
 # repl (left panel) -> tools -> secrets -> paste the token and name the variable e.g. BOT_TOKEN
